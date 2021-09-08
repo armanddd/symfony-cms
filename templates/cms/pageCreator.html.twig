@@ -1,0 +1,68 @@
+<!-- Page Creator Sidebar -->
+<div id="pageCreator">
+{#        <label for="pageCreatorTitle" id="pageCreatorTitleLabel">Title</label>#}
+{#        <input type="text" class="form-control" placeholder="" id="pageCreatorTitle">#}
+
+        <div id="pageCreatorElements">
+            <svg>
+                <use id="svgItem" class="pageCreatorItem" xlink:href="#paragraphCreator" />
+            </svg>
+            <svg>
+                <use id="svgItem" class="pageCreatorItem" xlink:href="#imageCreator" />
+            </svg>
+            <svg>
+                <use id="svgItem" class="pageCreatorItem" xlink:href="#threeUselessDots" />
+            </svg>
+        </div>
+
+        <div id="pageCreatorElementsAttributes">
+            <div>
+                <label>Width</label>
+                <input type="text" id="pageCreatorElementWidth">
+            </div>
+            <div>
+                <label>Height</label>
+                <input type="text" id="pageCreatorElementHeight">
+            </div>
+            <div>
+                <label>Margin</label>
+                <br>
+                <label class="firstMarginsLabel" for="pageCreatorElementMarginLeft">L:</label><input type="text" id="pageCreatorElementMarginLeft" style="width: 15%">
+                <label class="marginsLabel" for="pageCreatorElementMarginTop">T:</label><input type="text" id="pageCreatorElementMarginTop" style="width: 15%">
+            </div>
+            <div>
+                <label>Padding</label>
+                <br>
+                <label class="firstMarginsLabel" for="pageCreatorElementPaddingLeft">L:</label><input type="text" id="pageCreatorElementPaddingLeft" style="width: 15%">
+                <label class="marginsLabel" for="pageCreatorElementPaddingTop">T:</label><input type="text" id="pageCreatorElementPaddingTop" style="width: 15%">
+                <label class="marginsLabel" for="pageCreatorElementPaddingRight">R:</label><input type="text" id="pageCreatorElementPaddingRight" style="width: 15%">
+                <label class="marginsLabel" for="pageCreatorElementPaddingBottom">B:</label><input type="text" id="pageCreatorElementPaddingBottom" style="width: 15%">
+            </div>
+            <div style="white-space: nowrap">
+                <label>Text Alignment</label>
+                <br>
+                <button type="button" class="pageCreatorElementTextAlign btn btn-dark" id="pageCreatorElementAlignLeft">L</button>
+                <button type="button" class="pageCreatorElementTextAlign btn btn-dark" id="pageCreatorElementAlignCenter">C</button>
+                <button type="button" class="pageCreatorElementTextAlign btn btn-dark" id="pageCreatorElementAlignRight">R</button>
+            </div>
+            <div>
+                <label>Text Font Size</label>
+                <br>
+                <input type="text" id="pageCreatorElementTextFontSize">
+            </div>
+            <div>
+                <label>Text Options</label>
+                <br>
+                <button type="button" class="pageCreatorElementTextOptions btn btn-dark" id="pageCreatorElementBald">Bald</button>
+                <button type="button" class="pageCreatorElementTextOptions btn btn-dark" id="pageCreatorElementItalic">Italic</button>
+                <button type="button" class="pageCreatorElementTextOptions btn btn-dark" id="pageCreatorElementUnderline">Underline</button>
+            </div>
+        </div>
+
+        <div id="pageCreatorButtons">
+{#            <input type="hidden" value="{{ pages.id }}" id="pageID">#}
+            <button class="btn-danger btn" onclick="$('#content').empty();return false;">Reset</button>
+            <button class="btn-info btn" onclick="pageUpdate({{ page.id }});">Save</button>
+        </div>
+
+</div>

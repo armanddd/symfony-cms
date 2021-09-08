@@ -1,0 +1,48 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="wrapper">
+        {% embed 'cms/sidebar.html.twig' %}
+        {% endembed %}
+
+        <!-- Page Content -->
+        <div id="content">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Page</th>
+                    <th scope="col">Route</th>
+                    <th scope="col">Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for page in pages %}
+                    <tr>
+                        <th scope="row">{{ page.id }}</th>
+                        <form action="/page_deletion" method="post">
+                            <td>{{ page.pagename }}</td>
+                            <td>{{ page.pageroute }}</td>
+                            <td><input type="hidden" name="pageId" value="{{ page.id }}"><button class="btn btn-danger btn-sm">X</button></td>
+                        </form>
+                    </tr>
+                {% endfor %}
+                <tr>
+                    <th scope="row"></th>
+                    <form action="/page_creation" method="post">
+                        <td><input type="text" name="pageName"></td>
+                        <td><input type="text" name="routeName"></td>
+                        <td><button class="btn btn-info px-2 mx-5 my-2 cms-button"> Create </button></td>
+                    </form>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+    {% embed 'cms/svgs.html.twig' %}
+    {% endembed %}
+{% endblock %}

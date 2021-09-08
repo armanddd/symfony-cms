@@ -1,0 +1,289 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+/*GENERAL STYLE*/
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+    width: calc(100% - 250px);
+}
+
+svg {
+    height: 1em;
+    width: 1em;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+#sidebar {
+    /* don't forget to add all the previously mentioned styles here too */
+    background: #7386D5;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebarCollapse{
+    float: right;
+    transform: translate(1em, -2.56em);
+    padding: .2rem .25rem;
+}
+
+.cms-button{
+    background-color: #7386d5;
+    border-color: #6d7fcc;
+    box-shadow: 0 0 0 0.15rem rgb(91 104 156);
+}
+
+.cms-button:hover{
+    background-color: #7386d5;
+    border-color: #6d7fcc;
+    box-shadow: 0 0 0 0.3rem rgb(91 104 156);
+}
+
+.cms-button:focus{
+    background-color: #7386d5;
+    border-color: #6d7fcc;
+    box-shadow: 0 0 0 0.3rem rgb(91 104 156);
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #6d7fcc;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: #6d7fcc;
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+/*GENERAL STYLE*/
+
+
+/*SIDEBAR*/
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+/*@media (max-width: 768px) {*/
+/*    #sidebar {*/
+/*        margin-left: -250px;*/
+/*    }*/
+/*    #sidebar.active {*/
+/*        margin-left: 0;*/
+/*    }*/
+/*}*/
+
+/*SIDEBAR*/
+
+/*PAGE-CREATOR-SIDEBAR*/
+#pageCreator{
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 100vh;
+    border: 1px solid #7180bf;
+    box-shadow: 0 0 0 0.15rem rgb(80 94 150);
+    margin:0.15rem;
+}
+
+#pageCreatorTitle{
+    width: 80%;
+    margin-left: 10%;
+}
+
+#pageCreatorTitleLabel{
+    margin-left: 10%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.55em;
+}
+
+#pageCreatorElements{
+    margin-left: 10%;
+    margin-top: 26px;
+}
+
+#pageCreatorElements svg{
+    width: 50px;
+    height: 50px;
+    transition: background-color,box-shadow 0.3s linear;
+    padding-left: 2px;
+}
+
+#pageCreatorElements svg:hover{
+    cursor: pointer;
+    box-shadow: 0 0 0 0.15rem rgb(141 148 173);
+    background-color: rgba(137, 145, 181, 0.7);
+}
+
+#pageCreatorElements svg:nth-child(2){
+    margin-left: 17%;
+    margin-right: 17%;
+}
+
+#pageCreatorButtons{
+    float: right;
+    margin-right: 10%;
+    margin-top: 10%;
+}
+
+#pageCreatorButtons button {
+    margin-left: 10px;
+}
+
+#pageCreatorElementsAttributes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: stretch;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10%;
+    min-height: 66vh;
+    border: 1px solid black;
+}
+
+.pageCreatorElementAlign{
+    width: 30%;
+    font-size: 14px;
+}
+
+.pageCreatorElementAlign:hover{
+    background-color: #949aa0;
+    border: 2px solid #949aa0;
+}
+
+#pageCreatorElementsAttributes > div{
+    margin: 10px;
+}
+
+.pageCreatorElementTextOptions {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 10%;
+    width: 80%;
+}
+
+.pageCreatorElementTextAlign{
+    width: 30%;
+    margin-left: 20%;
+}
+
+#pageCreatorElementTextFontSize{
+    width: 80%;
+    margin-left: 10%;
+}
+
+#pageCreatorElementWidth{
+    width: 80%;
+    margin-left: 10%;
+}
+
+#pageCreatorElementHeight{
+    width: 80%;
+    margin-left: 10%;
+}
+
+.firstMarginsLabel{
+    margin: 1.6px;
+    margin-left: 2.9%;
+}
+
+.marginsLabel{
+    margin: 1.6px;
+}
+/*PAGE-CREATOR-SIDEBAR*/
+
+/*PAGE CONTENT*/
+#content{
+    width: 100%;
+    min-width: 100%;
+    padding: 25px;
+    overflow-wrap: break-word;
+}
+
+.paragraphCreatorInputField{
+    width: 100%;
+    height: 100%;
+    min-height: 36px;
+    border-width: 2px;
+    opacity: 0.86;
+}
+
+textarea:focus-visible {
+    outline: none;
+    border-width: 3px;
+    border-color: #1a1e21;
+}
+
+textarea {
+    resize: none;
+}
+
+.createdParagraphs{
+    min-height: 36px;
+}
+
+/*PAGE CONTENT*/
+

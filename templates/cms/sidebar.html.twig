@@ -1,0 +1,50 @@
+<!-- Sidebar -->
+<nav id="sidebar">
+    <div class="sidebar-header">
+        <h3>CMS Symfony</h3>
+        <button type="button" id="sidebarCollapse" class="btn btn-info btn-sm cms-button">
+            <i class="fas fa-align-left"></i>
+            <span id="collapseSign"><</span>
+        </button>
+    </div>
+
+    <ul class="list-unstyled components">
+        <p>{{ username }}</p>
+        <li class="active">
+            <a href="#homeSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                Content
+                <svg>
+                    <use id="svgItem" xlink:href="#arrowDown" />
+                </svg>
+            </a>
+            <ul class="collapse list-unstyled" id="homeSubmenu">
+                {% for page in pages %}
+                <li>
+                    <a href="/cms/{{ page.pageroute }}">{{ page.pagename }} <small style="font-weight: bold;font-style: italic;font-size: 0.8em">- {{ page.pageroute }}</small> </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </li>
+        <li>
+            <a href="/pages_management">Routing</a>
+        </li>
+        <li class="active">
+            <a href="#homeSecondSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                Site Preview
+                <svg>
+                    <use id="svgItem" xlink:href="#arrowDown" />
+                </svg>
+            </a>
+            <ul class="collapse list-unstyled" id="homeSecondSubmenu">
+                {% for page in pages %}
+                    <li>
+                        <a href="/site_preview/{{ page.pageroute }}">{{ page.pagename }} <small style="font-weight: bold;font-style: italic;font-size: 0.8em">- {{ page.pageroute }}</small> </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
+        <li>
+            <a href="/logout">Logout</a>
+        </li>
+    </ul>
+</nav>

@@ -1,0 +1,32 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="wrapper">
+
+        {% embed 'cms/sidebar.html.twig' %}
+        {% endembed %}
+
+        <!-- Page Creator -->
+        {% embed 'cms/pageCreator.html.twig' %}
+        {% endembed %}
+
+        <!-- Page Content -->
+        <div id="content">
+        {{ page.content | raw }}
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% embed 'cms/svgs.html.twig' %}
+    {% endembed %}
+    <script defer type="text/javascript" src="{{ asset('js/cms.js') }}"></script>
+    <style>
+        body{
+            width: calc(100% - 250px - 310px);
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+    </style>
+{% endblock %}
