@@ -94,15 +94,15 @@ function pageUpdate(pageId){
         }
     });
     $(".createdParagraphs").each(function (){
-        if ($(this).children()[0].value === "")
-        {
-            $(this).remove();
-        }
-        else{
-            $(this).append($(this).children()[0].value)
-            $(this).attr("style", $(this).attr("style") + $(".paragraphCreatorInputField").attr("style"));
-            $(this).css("border", "");
-            $(this).children()[0].remove();
+        if ($(this).children()[0]) {
+            if ($(this).children()[0].value === "") {
+                $(this).remove();
+            } else {
+                $(this).append($(this).children()[0].value)
+                $(this).attr("style", $(this).attr("style") + $(".paragraphCreatorInputField").attr("style"));
+                $(this).css("border", "");
+                $(this).children()[0].remove();
+            }
         }
     });
     let html = $("#content").clone().html().replace(/^\s*$(?:\r\n?|\n)/gm, "").replace("<input type=\"file\" onchange=\"readImage(this);\">", ""); //get content div html
